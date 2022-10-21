@@ -186,7 +186,7 @@
         }
         #user{
           display: none;
-          background-color: azure;
+          background-color: rgb(217, 224, 224);
         }
       </style>
     <title>Eventos</title>
@@ -203,7 +203,7 @@
     <div class="button">
     <button id="cadastro" onclick="Cadastrar()"> <span>Cadastrar</span></button>
     <button id="exibe" onclick="Exibir()"><span>Exibir</span></button>
-    <button id="user-btn" onclick="User()"><span>Usuário</span></button>
+    <button id="user-btn" onclick="User();"><span>Usuário</span></button>
 </div>
 </div>
 
@@ -239,14 +239,14 @@
           <div id="advice">
 
           </div>
-        <button onclick="envia()"><span>Entrar </span></button>
+        <button onclick="envia();"><span>Entrar </span></button>
             
         </div>
 
     </div>
 
     <div id="user">
-
+<p id="name1"> </p>
 
     </div>
 
@@ -313,29 +313,35 @@
         testa=2
       }
 
-       if ((login.length < 10) && (name.length > 10) && (password !==verify )&& (testa=2)) {
+       if (login.length < 10){  
          
          advice.innerHTML+="login tem menos de 10 letras!!"+"<br>";    
-    
+       }
+       if(name.length > 10){
+        
          advice.innerHTML+="Nome tem mais de 10 letras!!"+"<br>";        
-   
+       }
+       if  (password !==verify ){
         advice.innerHTML+="Senhas não coincidem!"+"<br>";
-   
+       }
+       if (testa==2) {
         advice.innerHTML+="Email não tem @!!";
-      }else{
+       }
+      if((login.length >= 10) && (name.length <= 10) && (password ==verify) && (testa!==2)) {
         document.getElementById("to-do").style.display="block";
         document.getElementById("container").style.display="none";
 
       }
-
+       
     }
     
     function User(){
       document.getElementById("to-do").style.display="none";
       var user = document.getElementById("user");
       user.style.display="block";
-      var name = document.getElementById("name");
-      user.innerHTML(name);
+      var name = document.getElementById("name").value;
+      document.getElementById("name") = name;
+      
     }
     </script>
 </body>
