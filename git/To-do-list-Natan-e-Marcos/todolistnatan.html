@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <style>
+  
+     p{
+       color: black;
+     }
+     
+     #inicio
+      {
+          position: relative;
+          background-color: black;
+          border: solid 2px;
+          border-radius: 10px;
+          border-color: orangered;
+          margin:auto;
+          margin-top: 20px;
+          width: 200px;
+          height: 150px;
+          padding: 10px;
+      }
+     #head{
+         background-color: black;
+         color: white;
+        
+         
+     }
+      #tarefas 
+      {
+          width: 400px;
+          margin: auto;
+          margin-bottom: 25px;
+          margin-top: 20px;
+          background-color: PeachPuff;
+          border: solid  3px;
+          border-color: orangered;
+          border-radius: 10px;
+          color: black;
+          text-align: center;
+      }
+      #add_btn{
+          position:absolute;
+          left: 200px;
+      }
+      .botao{
+        margin: 5px;
+        padding: 3px;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+        background-color: transparent;
+        border: 2px solid #e74c3c;
+        border-radius: 0.6em;
+        color: #e74c3c;
+        cursor: pointer;
+        -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+        transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+        box-sizing: border-box;
+          -webkit-appearance: none;
+      -moz-appearance: none;
+            appearance: none;
+        background-color: transparent;
+        border: 2px solid #e74c3c;
+        border-radius: 0.6em;
+        color: #e74c3c;
+        cursor: pointer;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-self: center;
+          -ms-flex-item-align: center;
+              align-self: center;
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 1;
+      margin: auto;
+      margin-bottom: 10px;
+      margin-top: 15px;
+      padding: 1.2em 2.8em;
+      text-decoration: none;
+      text-align: center;
+      text-transform: uppercase;
+      
+      font-weight: 700;
+      }
+      .botao:hover, .botao:focus {
+        color: #fff;
+        outline: 0;
+        }
+      #head{
+         border-bottom: solid 5px;
+         border-color: orangered;
+         height: 50px;
+         box-sizing: border-box;
+         position: relative;
+      }
+      #titulo{
+          text-align: center;
+          margin: auto;
+          font-size: 30px;
+          position: relative;
+          
+      }
+      body{
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          margin: auto;
+          margin-top: auto;
+          background-color: black;
+          font-size: 1rem;
+          font-weight: 600;
+          color: #000000c0;
+      }
+      #cadastro{
+          margin-left: 93%;
+          border-radius: 5px;
+          cursor: pointer;
+          position: absolute;
+          top: 5px;
+          right: 68px;        
+      }
+     
+
+      #exibe{
+        margin-left: 88%;
+        margin-top: auto;
+        position: absolute;
+        top: 5px;
+        right: 170px;
+        border-radius: 5px;
+        cursor: pointer;
+    
+        
+      }
+      #user-btn{
+        position: absolute;
+        top: 5px;
+        margin:  2px;
+        margin-left: 15px;
+        
+      }
+      exibe:hover{
+          background-color: orangered;
+      }
+      #texto{
+          margin: 15px;
+          cursor: pointer;
+      }
+      #add{
+          margin: auto;
+          cursor: pointer;
+          
+      }
+      button{
+          border-radius: 4px;
+          background-color: transparent;
+          color: white;
+          border: 2px solid orangered;
+         
+          
+      }
+     button:hover{
+        background-color: orangered;
+        transition: 0.5;
+     }
+     button:hover span {
+       padding-right: 25px;
+}
+        button:hover span:after {
+        opacity: 1;
+        right: 0;
+        }
+        button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+        }
+        button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+        }
+        #to-do{
+            display: none;
+
+        }
+        #user{
+          display: none;
+          background-color: rgb(217, 224, 224);
+          position: relative;
+          background-color: black;
+          border: solid  3px;
+          border-color: orangered;
+          margin: auto;
+          width: 200px;
+          color: #fff;
+          margin-top: 150px;
+          padding: 15px;
+        }
+
+        #container{
+          
+          margin: auto;
+          width: fit-content;
+          background-color:rgba(255, 255, 255, 0.5);
+          padding: 15px;
+          border-radius: 5px;
+          padding-top: 9px;
+          position: relative;
+          
+          
+        }
+        #header{
+          margin: auto;
+          width: fit-content;
+          color: #fff;
+          position: relative;
+        }
+        #video{
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          min-width: 100%;
+          min-height: 100%;
+          border-bottom: solid 3px orangered;
+        }
+        input{
+         border-radius: 3px;
+         border: none;
+         width: 180px;
+         height: 20px;
+        }
+        #d1{
+          display: flex;
+          flex-direction: row;
+          
+        }
+        #d1 input{
+          margin-top: 15px;
+          margin-left: 7px;
+          margin-right: 4px;
+        }
+        #d2 input{
+          margin-top: 15px;
+          margin-left: 7px;
+          margin-right: 4px;
+        }
+        
+        #d2{
+          display: flex;
+          flex-direction: row;
+        }
+        #d3{
+          display: flex;
+          flex-direction: row;
+        }
+        #d3 input{
+          margin-top: 15px;
+          margin-left: 7px;
+          margin-right: 4px;
+        }
+        #entra{
+          width: 50%;
+          cursor: pointer;
+          display: flex;
+          
+          justify-content: center;
+
+        }
+      </style>
+    <title>To do list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <video autoplay muted loop id="video">
+    <source src="img/background.mp4.mp4" type="video/mp4">
+  </video>
+   <div id="to-do">
+    <div id="head">
+       
+    <h3 id="titulo"> To do list </h3>
+
+    <div class="button">
+    <button id="cadastro" onclick="Cadastrar()"> <span>Cadastrar</span></button>
+    <button id="exibe" onclick="Exibir()"><span>Exibir</span></button>
+    <button id="user-btn" onclick="User();"><span>Usuário</span></button>
+</div>
+</div>
+
+   <div id="tudo">
+    
+    <div id="inicio">  
+       
+        <input id="texto" placeholder="Insira uma Tarefa">
+      <div id="add">
+          <center>
+        <button onclick="adicionar()"><span> Adicionar </span></button>
+          </center>
+    </div>
+        
+       </div>
+      
+    </div>
+    <div id="tarefas"></div>
+          
+    </div>
+</div>  
+    <div id="register">
+    <div id="header">
+      <h1>Login</h1>
+    </div>
+    
+        <div id="container">
+        <div id="d1">
+        <p>Nome:</p> <input type="text" id="name">
+       
+        <p>Login:</p> 
+        <input type="text" id="login">
+      </div>
+      <div id="d2">
+        <p>Email:</p> <input type="text" id="email">
+
+        <p>Senha:</p> <input type="password" id="password"> 
+      </div>
+      <div id="d3">
+        <p>Confirme sua senha:</p> <input type="password" id="confirm_password">
+      </div> <br>
+          <div id="advice">
+
+          </div>
+          <center>
+        <button onclick="envia();" id="entra"><span>Entrar </span></button>
+      </center>
+        </div>
+      
+
+    </div>
+
+    <div id="user">
+    <p id="name1"> </p>
+
+    </div>
+
+    
+    <script>
+        function Cadastrar(){
+      
+      document.getElementById('tudo').style.display="block";
+
+    }
+      function Exibir(){
+      
+        document.getElementById('tudo').style.display="none";
+        
+
+      }
+
+    function adicionar()
+    {
+        
+      var conteudo= document.getElementById('texto').value; 
+      if(conteudo!=""){
+        var cont=1;
+      var novoElemento= document.createTextNode(conteudo);
+      var divNova= document.createElement('div');
+      divNova.style.position='relative';
+      divNova.style.backgroundColor='black';
+      divNova.style.borderRadius='5px';
+      divNova.style.color='white';
+      divNova.style.border='solid 2px';
+      divNova.style.borderColor='orangered';
+      var botao= document.createElement('button');
+      var check = document.createElement('input');
+      check.setAttribute("type","checkbox");
+    divNova.appendChild(check);
+     
+    
+    
+    
+      
+     
+      botao.innerHTML= "Remover";
+      botao.className="botao"; 
+      botao.addEventListener("click",
+      function(){
+         divNova.remove();
+
+      })
+     divNova.appendChild(novoElemento);
+     divNova.appendChild(botao);
+    
+     document.getElementById('tarefas').appendChild(divNova);
+     document.getElementById('texto').value= "";
+    
+     
+      }
+    }
+
+    function envia(){
+      var advice = document.getElementById("advice");
+      var login = document.getElementById("login").value;
+      var name = document.getElementById("name").value;
+      var password = document.getElementById("password").value;
+      var verify = document.getElementById("confirm_password").value;
+      var email = document.getElementById("email").value;
+      var video = document.getElementsByTagName("video")[0];
+      
+      if (email.includes('@')){
+        var testa = 1;
+      }else{
+        testa=2
+      }
+
+       if (login.length < 10){  
+         
+         advice.innerHTML+="login tem menos de 10 letras!!"+"<br>";    
+       }
+       if(name.length > 10){
+        
+         advice.innerHTML+="Nome tem mais de 10 letras!!"+"<br>";        
+       }
+       if  (password !==verify ){
+        advice.innerHTML+="Senhas não coincidem!"+"<br>";
+       }
+       if (testa==2) {
+        advice.innerHTML+="Email não tem @!!";
+       }
+      if((login.length >= 10) && (name.length <= 10) && (password ==verify) && (testa!==2)) {
+        document.getElementById("to-do").style.display="block";
+        document.getElementById("register").style.display="none";
+
+      }
+       
+    }
+    
+    function User(){
+      var login = document.getElementById("login").value;
+      var name = document.getElementById("name").value;
+      var password = document.getElementById("password").value;
+      var verify = document.getElementById("confirm_password").value;
+      var email = document.getElementById("email").value;
+
+      document.getElementById("to-do").style.display="none";
+      var user = document.getElementById("user");
+      user.style.display="block";
+      
+      user.innerHTML= "Nome: "+ name +'<br>'+ '<hr>'+
+       "Login: "+ login +'<br>'+ '<hr>'+
+       "Senha: "+ password +'<br>'+'<hr>'+
+      "Email: "+ email ;
+    }
+    </script>
+</body>
+</html>
